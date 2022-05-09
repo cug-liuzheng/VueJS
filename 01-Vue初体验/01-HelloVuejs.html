@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{message}}</h1>
+    <h2>{{name}}</h2> 
+</div>
+<!-- 使用script对Vue框架进行引用，这是初始状态，没有使用npm安装Vue，所以先这样使用Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+    // let(定义变量)、const(定义常量，定义后不能改变其值)
+    const app = new Vue({
+        el:'#app', //使用el挂载管理的元素，这样表示我们声明的Vue对象用来管理 app 这个div元素，例如定义的div 名称为 app
+        data:{  //定义数据
+            message:'你好',
+            name:'cd'
+        },
+        methods:{ //用来定义Vue的一些方法，可以用于调用
+
+        }
+    })
+    </script>
+</body>
+</html>

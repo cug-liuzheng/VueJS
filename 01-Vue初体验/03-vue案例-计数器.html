@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>当前计数：{{counter}}</h1>
+        <!-- 这里需要设置 v-on 表示监听某一行为，并作出对应的处理 -->
+        <button v-on:click="add">+</button>
+        <button v-on:click="substract">-</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                counter:0
+            },
+            methods:{
+                // 函数定义区域，用来实现监听点击后的功能
+                add:function(){
+                    console.log('add被点击');
+                    this.counter++  //注意这里想要调用内部的counter变量，就必须要在前面添加一个this才能找到对应的counter变量
+                },
+                substract:function(){
+                    console.log('sub被点击');
+                    this.counter--
+                }
+            }
+        })
+    </script>
+</body>
+</html>
