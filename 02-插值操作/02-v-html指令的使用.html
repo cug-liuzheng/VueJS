@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用v-html指令，可以对其进行解析达到我们想要的解析效果 -->
+        <h2 v-html="url"></h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app', 
+            data:{  
+                message:'你好',
+                // 服务器返回了一个url网页标签，该怎么使用
+                url:"<a href='http://www.baidu.com'>百度一下</a>"
+            },
+            methods:{ 
+            }
+        })
+        </script>
+</body>
+</html>

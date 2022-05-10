@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind的使用，使用这个指令就能解析src的链接 -->
+        <img v-bind:src="imgUrl" alt="">
+        <!-- v-bind的使用，语法糖的写法  : -->
+        <img :src="url" alt="">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app', 
+            data:{  
+                message:'你好',
+                imgUrl:"https://cn.vuejs.org/images/logo.svg",
+                url:'data:image/jpeg;base64,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'
+            },
+            methods:{ 
+            }
+        })
+        </script>
+</body>
+</html>

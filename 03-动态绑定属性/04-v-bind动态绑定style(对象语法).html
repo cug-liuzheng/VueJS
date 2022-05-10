@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <h1 :style="{key(css属性名,value(属性值))}">{{message}}</h1> -->
+        <!-- 不使用变量直接定义,对于后面的值需要使用引号 -->
+        <h1 :style="{fontSize:'50px'}">{{message}}</h1>
+        <!-- 使用变量的方式来定义其样式 ,需要注意的地方就是这里，这些值可能必须是字符串，不然样式不会生效-->
+        <h1 :style="{fontSize:finalSize + 'px',backgroundColor:finalColor}">{{message}}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app', 
+            data:{  
+                message:'你好',  
+                finalSize:100,
+                finalColor:"red"
+            },
+            methods:{ 
+            }
+        })
+        </script>
+</body>
+</html>

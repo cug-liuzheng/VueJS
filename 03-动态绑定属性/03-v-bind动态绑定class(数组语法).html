@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 普通的绑定数组类名，表示这个有两个类名都被绑定上,这里的active和line是会被继续解析的 -->
+        <h2 :class="[active,line]">{{message}}</h2>
+        <!-- 使用方法来绑定对应的类名，在类名比较长的时候使用 -->
+        <h2 :class="getClasses()">{{message}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app', 
+            data:{  
+                message:'你好',
+                active:'aaaaaa',
+                line:'adadada'
+            },
+            methods:{ 
+                getClasses:function(){
+                    return [this.active,this.line]
+                }
+            }
+        })
+        </script>
+</body>
+</html>

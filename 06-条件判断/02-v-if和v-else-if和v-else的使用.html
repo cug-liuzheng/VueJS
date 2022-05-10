@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 需求：根据不同的成绩进行不同的显示 -->
+    <div id="app">
+        <h2 v-if="data>90">优秀</h2>
+        <h2 v-else-if="data>=80">良好</h2>
+        <h2 v-else-if="data>=60">及格</h2>
+        <h2 v-else>不及格</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app', 
+            data:{  
+                message:'你好',
+                data:99
+            },
+            computed:{
+            },
+            methods:{ 
+               
+            }
+        })
+        </script>
+</body>
+</html>

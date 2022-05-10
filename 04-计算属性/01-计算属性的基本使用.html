@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 计算属性，主要用于想将数据先进行处理，然后在页面上显示 -->
+    <!-- 计算属性(computed)与methods进行对比：其中计算属性是有缓存机制的，只要参数没变化就不会被重新调用，可以节省内存，而methods是每次都会被调用执行 -->
+    <!-- 需求：将名字结合起来在页面中显示出来 -->
+    <div id="app">
+        <h1>{{message}}</h1>
+        <!-- 这里打fullName其实是一个方法，但是在这边是当作一个属性来用，所以定义在computed中，用来表示其是一个计算属性 -->
+        <h2>{{fullName}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app', 
+            data:{  
+                message:'你好',
+                firstName:'lebron',
+                lastName:'James'
+            },
+            //计算属性
+            computed:{
+                fullName:function(){
+                    return this.firstName + ' ' +  this.lastName
+                }
+            },
+            methods:{ 
+            }
+        })
+        </script>
+</body>
+</html>
